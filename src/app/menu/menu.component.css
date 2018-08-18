@@ -1,0 +1,11 @@
+.welcome{
+    color: black; 
+    font-weight: bold; 
+    order:2;
+    float:left; 
+}
+
+.login{
+    
+    float:right; 
+}

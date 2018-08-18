@@ -1,0 +1,26 @@
+<nav>
+  <div class="nav-wrapper red darken-4">
+
+    <div class="header">
+      <ul class="hide-on-med-and-down">
+        <li>
+          <a routerLink="/buttonpage">Home</a>
+        </li>
+        <li>
+          <a routerLink="/buttonlist">My Buttons</a>
+        </li>
+        <div class="login">
+          <li class="welcome" *ngIf='(currentUser | async)'>Welcome, {{currentUser|async}}</li>
+          <li>
+            <a *ngIf='(currentUser | async) else routelogin' class="item" routerLinkActive='active' routerLink="/logout">Logout</a>
+          </li>
+        </div>
+        <ng-template #routelogin>
+          <li>
+            <a class="item" routerLinkActive='active' routerLink="/login">Log in</a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>
