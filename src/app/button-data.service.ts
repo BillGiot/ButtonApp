@@ -7,7 +7,7 @@ import { Button } from './button/button.model';
 
 @Injectable()
 export class ButtonDataService {
-  private readonly _appUrl = 'http://localhost:4200/API/buttons/';
+  private readonly _appUrl = '/API/buttons/';
 
 
   constructor(private http: Http, private auth: AuthenticationService) { }
