@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node ./buttonsbackend/bin/www",
+    "start": "node ./buttonsbackend/app",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
