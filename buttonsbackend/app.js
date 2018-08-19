@@ -29,8 +29,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json({limit: '3mb'}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.all('*', (req, res)=>{
+  const indexFile=`${path.join(__dirname, 'dist')}/index.html`;
+  res.status(200).sendFile(indexFile);
+})
+
 
 app.use('/', index);
 app.use('/API/users', users);
