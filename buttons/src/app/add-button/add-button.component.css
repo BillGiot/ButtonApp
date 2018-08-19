@@ -1,0 +1,32 @@
+.radioContainer{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px 10px 0 0;
+    
+}
+.wrapper{
+    display: flex !important;
+    flex: 1;
+    justify-content: center;
+}
+
+.wrapper form{
+    width: 70%;
+}
+
+.chooseFile{
+    background-color: #26a69a !important;
+    border: 1px solid;
+    
+}
+
+.error{
+    color: red; 
+    padding-bottom: 10px; 
+}
+
+#cancel{
+
+    margin-left: 1em; 
+}

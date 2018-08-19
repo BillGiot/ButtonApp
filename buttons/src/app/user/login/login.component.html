@@ -1,0 +1,30 @@
+<div class="container">
+  <form class="card-content col s12" [formGroup]='user' (ngSubmit)='onSubmit()'>
+
+    <div class="row">
+      <h4>Log in</h4>
+    </div>
+
+    <div class="row">
+      <label>Username</label>
+      <input class="input col s2" type="text" class="validate" formControlName="username">
+    </div>
+
+    <div class="row">
+      <label>Password</label>
+      <input class="input col s2" type="password" class="validate" formControlName="password">
+    </div>
+
+
+    <div class="row">
+      <button type='submit' class="indigo accent-3 btn">Login</button>
+    </div>
+
+    <div *ngIf='errorMsg' id="error">{{errorMsg}}</div>
+  </form>
+
+
+  <div class="row">
+    <a class='item' routerLink="/register">Or register</a>
+  </div>
+</div>

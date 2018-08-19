@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <h4>Register</h4>
+  </div>
+  <form [formGroup]='user' (ngSubmit)='onSubmit()'>
+    <div class="row"></div>
+    <div class="row">
+      <label class="col s1" for="username">Username:</label>
+      <input type="text" id="username" formControlName='username'>
+    </div>
+    <div class='ui pointing red basic label' *ngIf='user.get("username").errors?.userAlreadyExists 
+  && user.get("username").touched'>
+      a user with that name already exists
+    </div>
+
+    <div formGroupName='passwordGroup'>
+
+      <div class="row">
+        <label class="col s2">Password</label>
+      </div>
+      <div class="row">
+        <input id="password" class="input col s2" type="password" class="validate" formControlName='password'>
+        <div class='error' *ngIf=' passwordControl.errors?.passwordTooShort && passwordControl.touched'>
+          Password too short, you must have at least {{passwordControl.errors?.passwordTooShort.requiredLength}} characters
+        </div>
+      </div>
+      <div class="row">
+        <label class="col s3">Confirm password</label>
+      </div>
+      <div class="row">
+        <input id="confirmPassword" class="input col s2 center" type="password" class="validate" formControlName='confirmPassword'>
+      </div>
+
+      <div class='error' *ngIf=' user.get("passwordGroup").errors?.passwordsDiffer'>
+        Password must match!
+      </div>
+    </div>
+    <div class="row">
+      <button type='submit' class="indigo accent-3 btn">Register</button>
+    </div>
+  </form>
+</div>

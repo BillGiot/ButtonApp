@@ -1,0 +1,10 @@
+
+<div><p>{{button.name}}</p>
+<img width="100px" height="100px" src='../../assets/images/redbutton.png' (click)='buttonClick()' />
+<ul *ngIf="!publicPage">
+    <li id="editbtn" class="btn">
+        <a id="alterButton" [routerLink]="['/editButton/', button.id]">Edit button</a>
+    </li>
+
+</ul>
+</div>

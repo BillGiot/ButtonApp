@@ -1,0 +1,31 @@
+<div class="wrapper">
+
+  <form [formGroup]='button' (ngSubmit)='onSubmit()'>
+    <h3>{{buttonObject === undefined ? "Add new button" : "Edit button"}}</h3>
+    <div>
+      <label for='name_id'>name:</label>
+      <input type='text' id='name_id' formControlName='name'>
+    </div>
+    <div>
+      <label for='soundid'>sound:</label>
+      <input type="file" accept="audio/*" (change)="changeListener($event)">
+    </div>
+    <div class="radioContainer">
+
+      <label for='publicButtonId'>
+        <input type="radio" checked name="publicButton" value="public" id="publicButtonId" formControlName="publicButton">
+        <span>public: </span>
+      </label>
+      <label for='privateButtonId'>
+        <input type="radio" name="publicButton" value="private" id="privateButtonId" formControlName="publicButton">
+        <span>private:</span>
+      </label>
+    </div>
+
+    <button class="btn waves-effect waves-light" type='submit'>{{buttonObject === undefined ? "add" : "edit"}}</button>
+    <button id="cancel" class="btn waves-effect waves-light red" (click)='cancel()'>Cancel</button>
+    <div class='error' *ngIf="errors">
+        Give a name, password and soundfile and soundfile size cannot exceed 1MB. 
+      </div>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+<h1>ButtonZone</h1>
+<h2><b id="crossed"><b id="color">Don't</b></b> press my buttons!</h2>
+<div>
+    <a class="btn waves-effect waves-light" (click)="stopAllButtons()">Stop all sounds</a>
+</div>
+<ul class="row">
+  <li class="col s3" *ngFor="let button of _buttons">
+    <app-button [button]="button" [publicPage] = "true"></app-button>
+  </li>
+</ul>
+</div>
