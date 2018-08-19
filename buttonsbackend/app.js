@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var passport = require('passport'); 
 
 
-mongoose.connect('mongodb://localhost:27017/buttondb', {useNewUrlParser: true}); 
+mongoose.connect('mongodb://admin:button123@ds125392.mlab.com:25392/buttondb', {useNewUrlParser: true}); 
 
 require('./models/Button'); 
 require('./models/User'); 
@@ -26,7 +26,7 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json({limit: '9mb'}));
+app.use(bodyParser.json({limit: '3mb'}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
