@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+//var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -31,16 +31,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(passport.initialize());
 
+app.use('/', index);
+app.use('/API/users', users);
+
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.all('*', (req, res)=>{
   const indexFile=`${path.join(__dirname, 'dist')}/index.html`;
   res.status(200).sendFile(indexFile);
 })
-
-
-app.use('/', index);
-app.use('/API/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
